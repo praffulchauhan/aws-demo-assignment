@@ -1,0 +1,87 @@
+---------------------------------------------------
+Name: Prafful Chauhan
+Content: Brief About Project
+         Dependencies used
+         Github URL
+         DockerHub URL
+
+----------------------------------------------------
+About Project
+----------------------------------------------------
+
+Folder Structure:
+    main file: index.js
+
+    S3 service: ./s3/user.js
+
+    dynamoDB services: ./dynamoDB/write.js
+                      ./dynamoDB/read.js
+                      ./dynamoDB/update.js
+                      ./dynamoDB/delete.js
+
+------------------------------------------------------
+Postman requests: 
+
+    s3 service : user.js
+        1: createBucket: [POST]: http://localhost:3000/user/create
+                  {
+                          "Bucket": "prafful-first-aws-bucket"
+                  }
+         2: createObject: [POST]: http://localhost:3000/user/put
+                  {
+                          "Bucket": "prafful-first-aws-bucket",
+                          "Key": "my-file.txt",
+                          "Body": "Prafful Chauhan"
+                  }
+          3: getObject: [GET]: http://localhost:3000/user/get
+                  {
+                          "Bucket": "prafful-first-aws-bucket",
+                          "Key": "my-file.txt"
+                  }
+          4: deleteObject: http://localhost:3000/user/deleteObject
+                  {
+                          "Bucket": "prafful-first-aws-bucket",
+                          "Key": "my-file.txt"
+                  }
+          5: deleteBucket: [DELETE]: http://localhost:3000/user/deleteObject
+                  {
+                          "Bucket": "prafful-first-aws-bucket"
+                  }
+
+    dynamoDB service: 
+        1: write.js: [POST]: http://localhost:3000/user/write
+                   {
+                          "email_id": "prafful@gmail.com",
+                          "created_by": "Prafful Chauhan",
+                          "updated_by": "Prafful Chauhan",
+                          "is_deleted": "false"
+                  }                
+        2: read.js: [GET]: http://localhost:3000/user/read
+                   {
+                          "email_id": "prafful@gmail.com"
+                  }  
+        3: update.js: [POST]: http://localhost:3000/user/update
+                   {
+                          "email_id": "prafful@gmail.com",
+                          "boolValue": "true"
+                  } 
+        4: delete.js: [DELETE]: http://localhost:3000/user/delete
+                   {
+                          "email_id": "prafful@gmail.com"
+                  } 
+
+
+----------------Github URL-----------------------------
+Link: https://github.com/praffulchauhan/aws_nodejs_demo
+
+----------------DockerHub URL--------------------------
+Link: https://hub.docker.com/repository/docker/praffulchauhan/aws-app
+
+
+---------------------------------------------------
+ToDo's:
+    2: Error Handling
+    3: creating env accessKeys
+    4:using arrow function instead of traditional
+    
+    

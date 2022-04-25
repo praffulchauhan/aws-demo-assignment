@@ -1,0 +1,16 @@
+.x {
+  margin-bottom: 50px;
+}
+.heading {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.my-items {
+  display: block;
+}
+
+.nav-link {
+  background-color: rgba(41, 223, 102, 0.795);
+}
